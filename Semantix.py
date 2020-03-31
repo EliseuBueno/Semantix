@@ -9,7 +9,7 @@
 ###Configuração de sessão###
 #conf = (SparkConf()
 #         .setMaster("local")
-#         .setAppName("Teste")
+#         .setAppName("Semantix")
 #         .set("spark.executor.memory", "8g"))
 #sc = SparkContext(conf = conf)
 #spark = SparkSession(sc)
