@@ -1,12 +1,12 @@
 ﻿**1 - Qual o objetivo do comando cache em Spark?**
 
-**R:** O objetivo do comando cache em Spark é receber operações de resultados intermediarios lazy, armazená-los para que possam ser reutilizados, otimizado assim o desempenho de resultados, uma vez que sem este comando em ações repetidas teria que ser executado diversas vezes sobre um mesmo conjunto de dados mesmo que resultados intermediários sejam iguais.
+**R:** O objetivo do comando cache em Spark é receber operações de resultados intermediarios lazy, armazená-los para que possam ser reutilizados, otimizando assim o desempenho de resultados, uma vez que sem este comando em ações repetidas teria que ser executado diversas vezes sobre um mesmo conjunto de dados mesmo que resultados intermediários sejam iguais.
 
 **2 - O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê?**
 
 **R:** O mesmo código implementado em Spark é Sim normalmente mais rápido que a implementação equivalente em MapReduce.
-Para cada Job no MapReduce precisa ser iniciada uma instância da JVM, já no Spark, está instância fica sempre em execução em cada um dos nós, com isso o processo em Spark se torna normalmente mais rápido.
-Outro fator que torna mais rápido o uso de Spark é quando mais de um Job precisa ser executado, o uso de memória é menor pois o Job não precisa ser escrito em disco e depois lido novamente quando passado ao próximo Job como é no caso do MapReduce, o Spark permite que entre as operações o resultado intermediário seja passado diretamente através do cache dos dados em memória.
+Para cada Job no MapReduce precisa ser iniciada uma instância da JVM, já no Spark, esta instância fica sempre em execução em cada um dos nós, com isso o processo em Spark se torna normalmente mais rápido.
+Outro fator que torna mais rápido o uso de Spark é, quando mais de um Job precisa ser executado, o uso de memória é menor pois o Job não precisa ser escrito em disco e depois lido novamente quando passado ao próximo Job como é no caso do MapReduce, o Spark permite que entre as operações o resultado intermediário seja passado diretamente através do cache dos dados em memória.
 
 **3 - Qual é a função do SparkContext?**
 
@@ -37,9 +37,9 @@ Por esta razão conclui-se que a performace e desempenho de ReduceByKey em grand
 ```
 
 **Linha 1:** Uma RDD é criada, onde recebe o caminho do arquivo que será usado para manipulação posteriormente.
-**Linha 2:** Outra RDD é criada, onde recebe a primeira aplicando uma quebra de strings atravez do comando split que está sendo feito pelos espaços em branco, pegando as sequencias de cada linha e criando assim uma coleção de palavras.
+**Linha 2:** Outra RDD é criada, onde recebe a primeira aplicando uma quebra de strings atravez do comando split que está sendo feito pelos espaços em branco, pegando as sequências de cada linha e criando assim uma coleção de palavras.
 **Linha 3:** É feito o mapeamento, onde cada palavra é aplicado o conceito de chave-valor, onde a chave é a palavra e o valor definido 1.
-**Linha 4:** Os valores definidos como 1 são agrupados de acordo com a chave e aplicados o valor 1 para cada vez que a palavra aparecer na busca.
+**Linha 4:** Os valores definidos como 1 são agrupados de acordo com a chave e aplicado o valor 1 para cada vez que a palavra aparecer na busca.
 **Linha 5:** Os valores são contados e o RDD salvo em um arquivo de texto no caminho informado.
 
 
