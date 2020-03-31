@@ -49,7 +49,7 @@ Por esta razão conclui-se que a performace e desempenho de ReduceByKey em grand
 
 **1 - Número de hosts únicos:**
 
-**R:** 137978
+**R:** 137979
 
 **2 - O total de erros 404:**
 
